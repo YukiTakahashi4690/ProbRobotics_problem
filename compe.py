@@ -72,8 +72,8 @@ class compare_node2:
         ax1 = SubplotZero(fig2, 111)
         fig2.add_subplot(ax1)
 
-        ax1.plot(x2, self.before_no[-1], label="before")
-        ax1.plot(x2, self.after_no[-1], label="after")
+        ax1.plot(x2, self.before_no[-1], label="改良前")
+        ax1.plot(x2, self.after_no[-1], label="改良後")
         ax1.set_xlabel("t")
         ax1.set_ylabel("確率")
         ax1.legend(loc=0)
@@ -94,12 +94,12 @@ def main():
     #改良前を各施行で計算
     p_1 = draw_fig()
     compe.find_distribution(before, p_1.posterior_distribution_list)
-    p_1.plot(compe.t, title, "before")
+    p_1.plot(compe.t, title, "改良前")
 
     #改良後を各施行で計算
     p_2 = draw_fig()
     compe.find_distribution(after, p_2.posterior_distribution_list)
-    p_2.plot(compe.t, title, "after")
+    p_2.plot(compe.t, title, "改良後")
 
     plt.show()
 

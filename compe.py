@@ -94,12 +94,12 @@ def main():
     #改良前を各施行で計算
     p_1 = draw_fig()
     compe.find_distribution(before, p_1.posterior_distribution_list)
-    p_1.plot(compe.t, title, "改良前")
+    p_1.plot(compe.t, title, "before")
 
     #改良後を各施行で計算
     p_2 = draw_fig()
     compe.find_distribution(after, p_2.posterior_distribution_list)
-    p_2.plot(compe.t, title, "改良後")
+    p_2.plot(compe.t, title, "after")
 
     plt.show()
 
